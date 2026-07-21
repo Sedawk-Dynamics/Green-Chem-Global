@@ -58,7 +58,6 @@ const product = {
     'Jumbo bags of 500 kg',
     'Jumbo bags of 1000 kg',
     'Custom packaging as per customer requirement',
-    'Available in Flakes and Powder Form',
   ],
   keyProperties: [
     'Hard, brittle wax with high melting point (83–89°C)',
@@ -67,6 +66,7 @@ const product = {
     'Superior lubricating and thickening properties',
     'High water resistance',
     'Good compatibility with numerous formulations',
+    'Available in flakes and powder form',
   ],
   industries: [
     'Lubricants & Greases',
@@ -84,6 +84,7 @@ export const metadata = {
   title: 'Hydrogenated Castor Oil (HCO) | GreenChem Global',
   description:
     'High-purity Hydrogenated Castor Oil (HCO / Castor Wax) — CAS 8001-78-3. Hard white flakes for greases, lubricants, coatings, adhesives, and specialty chemicals. Globally exported.',
+  alternates: { canonical: '/products/hco' },
 }
 
 export default function HCOPage() {

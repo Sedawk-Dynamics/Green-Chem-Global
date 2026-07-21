@@ -61,7 +61,7 @@ export default function CeoMessage() {
                   fill
                   className="object-cover object-center"
                   sizes="(max-width: 768px) 100vw, 340px"
-                  priority
+                  loading="lazy"
                 />
                 {/* Overlay gradient */}
                 <div
@@ -74,7 +74,10 @@ export default function CeoMessage() {
                 {/* Name tag */}
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <p className="font-serif font-bold text-white text-lg leading-tight">
-                    Founder & Director
+                    Kiran Jadav
+                  </p>
+                  <p className="text-white/80 text-sm font-sans">
+                    Co-founder &amp; Designated Partner
                   </p>
                   <p className="text-white/70 text-sm font-sans">
                     GreenChem Global Exports LLP
@@ -101,9 +104,9 @@ export default function CeoMessage() {
                 <div className="flex flex-col gap-4 text-sm text-muted-foreground font-sans leading-relaxed">
                   <p>
                     Our journey began with a conviction that sustainable chemistry is not just the
-                    future — it is a present opportunity. Every barrel of castor oil we export is
-                    a step toward greener supply chains, stronger livelihoods for Indian farmers,
-                    and a more responsible global chemicals industry.
+                    future — it is a present opportunity. Every shipment we facilitate is an
+                    opportunity to strengthen responsible supply chains and create greater value
+                    from India&apos;s castor-based chemical ecosystem.
                   </p>
                   <p>
                     We are committed to growing GreenChem Global into a company our customers,

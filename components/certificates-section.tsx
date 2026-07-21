@@ -8,7 +8,7 @@ import { Award, CheckCircle2, X } from 'lucide-react'
 const certificates = [
   {
     id: 1,
-    title: 'DPIIT Startup Recognition',
+    title: 'DPIIT Recognized Startup',
     issuer: 'Government of India - Department for Promotion of Industry and Internal Trade',
     date: '12-03-2026',
     image: '/certificates/cert-dpiit.png',
@@ -21,7 +21,7 @@ const certificates = [
   },
   {
     id: 2,
-    title: 'Importer-Exporter Code (IEC)',
+    title: 'IEC Registered Exporter',
     issuer: 'Government of India - Ministry of Commerce & Industry',
     date: '10/03/2026',
     image: '/certificates/cert-iec.png',
@@ -34,7 +34,7 @@ const certificates = [
   },
   {
     id: 3,
-    title: 'CHEMEXCIL Membership Certificate',
+    title: 'CHEMEXCIL Member – Merchant Exporter',
     issuer: 'Basic Chemicals Cosmetics & Dyes Export Promotion Council',
     date: '09/04/2026',
     image: '/certificates/cert-chemexcil.png',
@@ -43,6 +43,20 @@ const certificates = [
       'Registration No: RCMC/CHEMEXCIL/01836/2026-2027',
       'Merchant Exporter status',
       'Castor oil, lubricants & specialty chemicals',
+    ],
+  },
+  {
+    id: 4,
+    title: 'SEA Member – Associate Member',
+    issuer: "The Solvent Extractors' Association of India",
+    date: '24/06/2026',
+    image: '/certificates/SEA-certificate.png',
+    description:
+      "Associate membership of India's premier association for the vegetable oil industry and trade",
+    details: [
+      'Membership No: A-3076',
+      'Associate Member w.e.f. 23-06-2026',
+      'ISO 9001:2015 certified association',
     ],
   },
 ]
@@ -159,16 +173,16 @@ export default function CertificatesSection() {
             Certifications
           </span>
           <h2 className="font-serif font-bold text-3xl md:text-4xl text-foreground text-balance max-w-2xl mb-4">
-            Official Recognition & Certifications
+            Registrations, Recognitions &amp; Trade Memberships
           </h2>
           <p className="text-muted-foreground max-w-xl mb-4">
-            We are proudly recognized and certified by government authorities and international trade bodies
+            Our registrations and memberships with government authorities and Indian trade bodies
           </p>
           <div className="w-16 h-1 rounded-full bg-primary" />
         </motion.div>
 
         {/* Certificates Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {certificates.map((cert, index) => (
             <motion.div
               key={cert.id}
@@ -188,6 +202,8 @@ export default function CertificatesSection() {
                     src={cert.image}
                     alt={cert.title}
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 300px"
+                    loading="lazy"
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors" />
@@ -248,10 +264,10 @@ export default function CertificatesSection() {
         >
           <div className="inline-flex items-center gap-2 mb-4">
             <Award className="text-primary" size={24} />
-            <h3 className="font-serif font-bold text-lg text-foreground">Certified & Compliant</h3>
+            <h3 className="font-serif font-bold text-lg text-foreground">Registered &amp; Compliant</h3>
           </div>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Our certifications from government authorities demonstrate our commitment to quality, ethical practices, and international compliance. We maintain the highest standards in sustainability and export quality assurance.
+            These registrations and memberships establish GreenChem Global&apos;s legal export identity and participation in India&apos;s chemical-export ecosystem. Product quality is governed separately through agreed specifications, manufacturer documentation and batch-level COAs.
           </p>
         </motion.div>
       </div>

@@ -12,7 +12,7 @@ const product = {
   ecNumber: '232-293-8',
   hsnNumber: '15153090',
   description:
-    'Castor Oil FSG is a pale, yellow viscous liquid free from suspended matter and insoluble in water. It is an industrial-grade renewable vegetable oil derived from castor seeds (Ricinus communis). Known for its high viscosity, excellent lubricity, and unique hydroxyl fatty acid structure, it serves as the starting material for most castor oil derivatives.',
+    'Castor Oil FSG is a pale, yellow viscous liquid free from suspended matter and insoluble in water. It is a First Special Grade (FSG) renewable vegetable oil derived from castor seeds (Ricinus communis). Known for its high viscosity, excellent lubricity, and unique hydroxyl fatty acid structure, it serves as the starting material for most castor oil derivatives.',
   specifications: [
     { parameter: 'Appearance', value: 'Pale Yellow Viscous Liquid' },
     { parameter: 'Viscosity Gardner at 25°C', value: 'U – V' },
@@ -76,7 +76,8 @@ const product = {
 export const metadata = {
   title: 'Castor Oil FSG | GreenChem Global',
   description:
-    'Industrial-grade Castor Oil First Special Grade (FSG) — CAS 8001-79-4. Renewable vegetable oil for lubricants, polyurethane, coatings, and specialty chemicals. Exported globally.',
+    'Castor Oil First Special Grade (FSG) — CAS 8001-79-4. Renewable vegetable oil for lubricants, polyurethane, coatings, and specialty chemicals. Exported globally.',
+  alternates: { canonical: '/products/castor-oil' },
 }
 
 export default function CastorOilPage() {

@@ -110,6 +110,7 @@ export const metadata = {
   title: 'Undecylenic Acid (10-Undecenoic Acid) | GreenChem Global',
   description:
     'High-purity Undecylenic Acid — CAS 112-38-9. ≥99.5% GC purity bio-based C11 fatty acid for antifungal pharmaceuticals, cosmetics, agriculture, and specialty chemicals.',
+  alternates: { canonical: '/products/undecylenic-acid' },
 }
 
 export default function UndecylenicAcidPage() {

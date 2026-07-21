@@ -69,6 +69,27 @@ const products = [
     tagText: '#fff',
   },
   {
+    id: 'undecylenic-acid',
+    name: 'Undecylenic Acid',
+    subtitle: '10-Undecenoic Acid (CAS: 112-38-9)',
+    image: '/undecylenic-acid.png',
+    detailUrl: '/products/undecylenic-acid',
+    overview:
+      'A high-purity unsaturated C11 fatty acid derived from castor oil pyrolysis. Possesses excellent antifungal, antibacterial and surface-active properties. Widely used in pharmaceutical, cosmetic, agricultural and specialty chemical industries.',
+    applications: [
+      'Antifungal Pharmaceuticals',
+      'Cosmetics & Personal Care',
+      'Agricultural Fungicides',
+      'Veterinary Products',
+      'Industrial Derivatives',
+      'Polymer & Specialty Chemicals',
+    ],
+    packaging: '25 kg HDPE carboys, 50 kg / 180 kg HDPE drums, 200 kg lined MS drums, IBC containers, bulk tankers, custom packaging on request',
+    tag: 'Bio-Based',
+    tagColor: 'var(--brand-blue)',
+    tagText: '#fff',
+  },
+  {
     id: 'sebacic-acid',
     name: 'Sebacic Acid',
     subtitle: 'Bio-Based Dicarboxylic Acid',
@@ -106,45 +127,6 @@ const products = [
     tagColor: 'var(--brand-green-mid)',
     tagText: '#fff',
   },
-  {
-    id: 'green-chemicals',
-    name: 'Green & Sustainable Chemicals',
-    subtitle: 'Eco-Friendly Formulations',
-    image: '/green-chemicals.png',
-    overview:
-      'Environmentally friendly products derived from renewable feedstocks. Support sustainable manufacturing and reduce environmental impact. Used in bio-lubricants, coatings, and eco-friendly formulations.',
-    applications: [
-      'Bio-Lubricants',
-      'Coatings',
-      'Eco-Friendly Industrial Formulations',
-      'Green Polymers',
-    ],
-    packaging: 'Customized bulk packaging options available',
-    tag: 'Green Chemistry',
-    tagColor: 'var(--brand-green-deep)',
-    tagText: '#fff',
-  },
-  {
-    id: 'undecylenic-acid',
-    name: 'Undecylenic Acid',
-    subtitle: '10-Undecenoic Acid (CAS: 112-38-9)',
-    image: '/undecylenic-acid.png',
-    detailUrl: '/products/undecylenic-acid',
-    overview:
-      'A high-purity unsaturated C11 fatty acid derived from castor oil pyrolysis. Possesses excellent antifungal, antibacterial and surface-active properties. Widely used in pharmaceutical, cosmetic, agricultural and specialty chemical industries.',
-    applications: [
-      'Antifungal Pharmaceuticals',
-      'Cosmetics & Personal Care',
-      'Agricultural Fungicides',
-      'Veterinary Products',
-      'Industrial Derivatives',
-      'Polymer & Specialty Chemicals',
-    ],
-    packaging: '25 kg HDPE Carboys, 50 kg HDPE Drums, 180 kg HDPE Drums, IBC Containers, Bulk Tankers',
-    tag: 'Bio-Based',
-    tagColor: 'var(--brand-blue)',
-    tagText: '#fff',
-  },
 ]
 
 function ProductCard({ product, delay }: { product: typeof products[0] & { detailUrl?: string }; delay: number }) {
@@ -172,6 +154,8 @@ function ProductCard({ product, delay }: { product: typeof products[0] & { detai
             src={product.image}
             alt={product.name}
             fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 380px"
+            loading="lazy"
             className="object-cover"
           />
         </motion.div>
@@ -195,7 +179,15 @@ function ProductCard({ product, delay }: { product: typeof products[0] & { detai
       {/* Content */}
       <div className="flex flex-col flex-1 p-6">
         <p className="text-xs font-sans uppercase tracking-widest text-muted-foreground mb-1">{product.subtitle}</p>
-        <h3 className="font-serif font-bold text-lg text-foreground mb-3">{product.name}</h3>
+        <h3 className="font-serif font-bold text-lg text-foreground mb-3">
+          {product.detailUrl ? (
+            <Link href={product.detailUrl} className="hover:text-primary transition-colors">
+              {product.name}
+            </Link>
+          ) : (
+            product.name
+          )}
+        </h3>
         <p className="font-sans text-sm text-muted-foreground leading-relaxed mb-4 flex-1">{product.overview}</p>
 
         {/* Applications - revealed on hover */}
@@ -238,12 +230,9 @@ function ProductCard({ product, delay }: { product: typeof products[0] & { detai
           <p className="text-xs font-sans text-muted-foreground leading-snug">{product.packaging}</p>
         </div>
 
-        {/* CTA */}
-        <motion.div
-          animate={{ opacity: hovered ? 1 : 0, y: hovered ? 0 : 8 }}
-          transition={{ duration: 0.2 }}
-          className="mt-4 flex items-center gap-3 flex-wrap"
-        >
+        {/* CTA — always visible (previously hidden until hover, which made it
+            unreachable on touch devices) */}
+        <div className="mt-4 flex items-center gap-3 flex-wrap">
           <button
             onClick={() => {
               const el = document.querySelector('#contact')
@@ -262,7 +251,7 @@ function ProductCard({ product, delay }: { product: typeof products[0] & { detai
               Read More
             </Link>
           )}
-        </motion.div>
+        </div>
       </div>
     </motion.div>
   )

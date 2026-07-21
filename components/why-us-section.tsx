@@ -17,7 +17,7 @@ const reasons = [
   {
     icon: ShieldCheck,
     title: "Rigorous Quality Control",
-    desc: "Every batch undergoes multi-stage testing aligned with international standards. We source only from certified manufacturers with verified COAs.",
+    desc: "Each shipment is supported by the manufacturer's batch COA; independent testing can be arranged when required.",
     color: "#22c55e", // green
   },
   {
@@ -29,7 +29,7 @@ const reasons = [
   {
     icon: Truck,
     title: "Reliable Supply Chain",
-    desc: "Deep relationships with Gujarat's top castor processors ensure consistent availability — no stockouts, no supply surprises.",
+    desc: "Deep relationships with qualified castor-oil & derivative manufacturers in Gujarat. Supplier coordination and advance planning support continuity of supply.",
     color: "#14b8a6", // teal
   },
   {
@@ -41,7 +41,7 @@ const reasons = [
   {
     icon: FlaskConical,
     title: "Technical Support",
-    desc: "Our team provides product datasheets, safety documentation, and application guidance to help customers integrate our products effectively.",
+    desc: "We coordinate technical documentation and application-related queries with our manufacturing partners.",
     color: "#4ade80",
   },
   {
@@ -53,7 +53,7 @@ const reasons = [
   {
     icon: Clock,
     title: "Fast Turnaround",
-    desc: "Quick sample dispatch, streamlined order processing, and proactive shipment tracking ensure your timelines are always respected.",
+    desc: "Quick sample dispatch, streamlined order processing, and clear lead-time commitments with proactive shipment updates.",
     color: "#14b8a6",
   },
   {

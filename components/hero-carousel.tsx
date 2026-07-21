@@ -104,8 +104,9 @@ export default function HeroCarousel() {
             src={slide.image}
             alt={`GreenChem Global - ${slide.badge}`}
             fill
-            priority
-            loading="eager"
+            sizes="100vw"
+            priority={current === 0}
+            loading={current === 0 ? 'eager' : 'lazy'}
             className="object-cover object-center"
           />
           {/* Overlay */}

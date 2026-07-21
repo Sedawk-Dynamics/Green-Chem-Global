@@ -46,6 +46,7 @@ const productOptions = [
   "Castor Oil",
   "Hydrogenated Castor Oil (HCO)",
   "12-Hydroxystearic Acid (12-HSA)",
+  "Undecylenic Acid",
   "Sebacic Acid",
   "Multiple Products",
   "Other / Not Listed",
@@ -73,6 +74,7 @@ export default function ContactSection() {
   })
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [consent, setConsent] = useState(false)
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -193,7 +195,7 @@ export default function ContactSection() {
                 Registered Exporter
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                IEC Registered · GST Compliant · Full export documentation provided including COA, MSDS, and phytosanitary certificates where applicable.
+                Export documentation, including commercial invoice, packing list, Certificate of Origin, COA, SDS and other product/market-specific documents as applicable.
               </p>
             </div>
           </motion.div>
@@ -229,6 +231,7 @@ export default function ContactSection() {
                 <button
                   onClick={() => {
                     setSubmitted(false)
+                    setConsent(false)
                     setFormData({ name: "", company: "", email: "", phone: "", product: "", quantity: "", message: "" })
                   }}
                   className="text-sm font-semibold text-[var(--brand-green-mid)] hover:underline"
@@ -355,6 +358,45 @@ export default function ContactSection() {
                     onChange={handleChange}
                     className={`${inputClass} resize-none`}
                   />
+                </div>
+
+                {/* DPDP Act notice + consent */}
+                <div
+                  className="rounded-xl border border-border p-4 text-xs leading-relaxed text-muted-foreground"
+                  style={{ background: "var(--brand-green-light)" }}
+                >
+                  <p className="font-semibold text-foreground mb-1">How we use your information</p>
+                  <p className="mb-3">
+                    GreenChem Global Exports LLP collects the details above solely to respond to your
+                    enquiry — to share pricing, specifications, availability and related commercial
+                    correspondence. We do not sell or share your data with third parties for
+                    marketing. Details are retained only as long as needed for the enquiry and our
+                    statutory record-keeping obligations. To access, correct or delete your data,
+                    write to{" "}
+                    <a href="mailto:info@greenchemglobal.com" className="text-primary underline">
+                      info@greenchemglobal.com
+                    </a>
+                    . See our{" "}
+                    <a href="/privacy-policy" className="text-primary underline">
+                      Privacy Policy
+                    </a>
+                    .
+                  </p>
+                  <label className="flex items-start gap-2.5 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      name="consent"
+                      required
+                      checked={consent}
+                      onChange={(e) => setConsent(e.target.checked)}
+                      className="mt-0.5 h-4 w-4 shrink-0 accent-[var(--brand-green-mid)]"
+                    />
+                    <span className="text-foreground">
+                      I consent to GreenChem Global Exports LLP processing the information provided
+                      in order to respond to this enquiry.{" "}
+                      <span className="text-destructive">*</span>
+                    </span>
+                  </label>
                 </div>
 
                 <button

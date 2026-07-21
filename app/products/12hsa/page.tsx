@@ -29,7 +29,6 @@ const product = {
     { component: 'Stearic Acid (18:0)', value: '0–3%' },
     { component: 'Oleic Acid & Isomers (18:1)', value: '3–6%' },
     { component: 'Linoleic Acid (18:2)', value: '1–5%' },
-    { component: 'Ricinoleic Acid', value: '85% Min' },
   ],
   applications: [
     'Manufacture of multipurpose lithium, calcium, and lithium complex greases',
@@ -37,11 +36,10 @@ const product = {
     'Internal lubricant in processing and molding of plastics',
     'Aqueous and non-aqueous coating systems for automotive, industrial and architectural applications',
     'Shrink-resistant treatment for wool and textile finishing',
-    'Coating formulations for interior of metal food and beverage containers',
+    'Coating formulations for interior of metal food and beverage containers (subject to applicable regulatory approvals)',
     'Activator and internal lubricant in natural and synthetic rubber compounds',
     'Rheology modifier (thixotropic agent) in inks, coatings and related formulations',
-    'Manufacture of esters, ethoxylates, sulfates and specialty chemical derivatives',
-    'Applications in plasticizers, textiles, cosmetics, lubricants and metalworking fluids',
+    'Manufacture of esters, ethoxylates, sulfates and specialty chemical derivatives for use in plasticizers, textiles, cosmetics, lubricants and metalworking fluids',
   ],
   packaging: [
     '25 kg bags',
@@ -72,6 +70,7 @@ export const metadata = {
   title: '12-Hydroxy Stearic Acid (12-HSA) | GreenChem Global',
   description:
     '12-Hydroxy Stearic Acid (12-HSA) — CAS 106-14-9. High-purity fatty acid for lithium greases, coatings, rubber, and specialty chemicals. Supplied globally.',
+  alternates: { canonical: '/products/12hsa' },
 }
 
 export default function HSAPage() {

@@ -62,8 +62,43 @@ export default function ProductDetailPage({ product }: { product: Product }) {
     window.location.href = '/#contact'
   }
 
+  const url = `https://greenchemglobal.com/products/${product.id}`
+
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://greenchemglobal.com' },
+        { '@type': 'ListItem', position: 2, name: 'Products', item: 'https://greenchemglobal.com/#products' },
+        { '@type': 'ListItem', position: 3, name: product.name, item: url },
+      ],
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Product',
+      name: product.name,
+      description: product.description,
+      image: `https://greenchemglobal.com${product.image}`,
+      url,
+      category: 'Specialty Chemicals',
+      brand: { '@type': 'Brand', name: 'GreenChem Global' },
+      additionalProperty: [
+        { '@type': 'PropertyValue', name: 'CAS Number', value: product.casNumber },
+        { '@type': 'PropertyValue', name: 'EC Number', value: product.ecNumber },
+        ...(product.hsnNumber
+          ? [{ '@type': 'PropertyValue', name: 'HSN Number', value: product.hsnNumber }]
+          : []),
+      ],
+    },
+  ]
+
   return (
     <div className="min-h-screen bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Sticky top bar */}
       <div className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-border shadow-sm">
         <div className="container mx-auto px-6 h-16 flex items-center justify-between gap-4">
