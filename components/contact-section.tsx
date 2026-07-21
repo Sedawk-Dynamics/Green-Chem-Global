@@ -19,13 +19,6 @@ const contactInfo = [
     href: "tel:+919274710944",
     external: false,
   },
-  // {
-  //   icon: Mail,
-  //   label: "Admin Email",
-  //   value: "admin@greenchemglobal.com",
-  //   href: "mailto:admin@greenchemglobal.com",
-  //   external: false,
-  // },
   {
     icon: Mail,
     label: "Email",
